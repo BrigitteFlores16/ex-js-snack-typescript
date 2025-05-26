@@ -1,3 +1,5 @@
+import type {Dipendente, Developer, ProjectManager, Team} from "./types";
+
 //Snack 1
 //Hai ricevuto un dato generico da un'API, ma non sai di che tipo sia… Il tuo compito è controllare il tipo del dato e stampare il valore in modo corretto.
 //Se è una stringa: stampala in maiuscolo
@@ -58,10 +60,17 @@ stampaValore(new Promise(resolve => setTimeout(() => resolve("Dato risolto!"), 1
 //contratto → Specifica il tipo di contratto del dipendente, con valori limitati a “indeterminato”, “determinato” o “freelance”.
 
 
+const dipendente: Dipendente = {
+    nome: "Carla",
+    cognome: "Bruno",
+    annoNascita: 1992,
+    sesso: "f",
+    anniDiServizio: [2014, 2015, 2017, 2018],
+    emailAziendale: "Carla.Bruno@azienda.com",
+    contratto: "indeterminato"
+};
 
-
-
-
+console.log(dipendente);
 
 
 //Snack 3
@@ -80,3 +89,38 @@ stampaValore(new Promise(resolve => setTimeout(() => resolve("Dato risolto!"), 1
 //progettoAttuale → Nome del progetto su cui lavora il team (può essere null se il team è in attesa di assegnazione).
 //budget → Importo numerico del budget assegnato al team (sempre presente).
 //membri → Una tuple in cui il primo elemento è sempre un Project Manager, seguito da uno o più Developers (almeno un developer obbligatorio).
+
+const developer1: Developer = {
+    nome: "Maria",
+    cognome: "Ortega",
+    annoNascita: 1990,
+    sesso: "f",
+    anniDiServizio: [2020, 2021, 2022],
+    emailAziendale: "maria.ortega@azienda.com",
+    contratto: "indeterminato",
+    livelloEsperienza: "Mid",
+    linguaggi: ["JavaScript", "TypeScript"],
+    certificazioni: ["AWS Certified Developer", "Scrum Master"]
+};
+
+const projectManager1: ProjectManager = {
+    nome: "Giuseppe",
+    cognome: "locatelli",
+    annoNascita: 1982,
+    sesso: "m",
+    anniDiServizio: [2010, 2011, 2015, 2020],
+    emailAziendale: "luigi.verdi@azienda.com",
+    contratto: "indeterminato",
+    teamSize: 5,
+    budgetGestito: 500000,
+    stakeholderPrincipali: ["CEO", "CTO"]
+};
+
+const team1: Team = {
+    nome: "Innovazione IT",
+    progettoAttuale: "Sistema di gestione documentale",
+    budget: 750000,
+    membri: [projectManager1, developer1]
+};
+
+console.log(team1);
