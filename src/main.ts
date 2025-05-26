@@ -9,7 +9,36 @@
 //Se è un array: stampa la sua lunghezza
 //Se è una Promise: attendi che si risolva e stampa il valore del resolve.
 
+async function stampaValore(dato: unknown): Promise<void> {
+    if (dato === null) {
+        console.log("Il dato è vuoto");
+    } else if (Array.isArray(dato)) {
+        console.log(`Lunghezza dell'array: ${dato.length}`);
+    } else if (dato instanceof Promise) {
+        try {
+            const risultato = await dato;
+            console.log(`Valore della Promise risolta: ${risultato}`);
+        } catch (errore) {
+            console.log("Errore nella Promise:", errore);
+        }
+    } else if (typeof dato === "string") {
+        console.log(dato.toUpperCase());
+    } else if (typeof dato === "number") {
+        console.log(dato * 2);
+    } else if (typeof dato === "boolean") {
+        console.log(dato ? "Sì" : "No");
+    } else {
+        console.log("Tipo non supportato");
+    }
+}
 
+
+stampaValore("Hello World");   
+stampaValore(4);        
+stampaValore(true);     
+stampaValore([2, 4]);   
+stampaValore(null);      
+stampaValore(new Promise(resolve => setTimeout(() => resolve("Dato risolto!"), 1000)));
 
 
 
