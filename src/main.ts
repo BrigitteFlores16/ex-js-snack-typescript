@@ -109,7 +109,7 @@ const projectManager1: ProjectManager = {
     annoNascita: 1982,
     sesso: "m",
     anniDiServizio: [2010, 2011, 2015, 2020],
-    emailAziendale: "luigi.verdi@azienda.com",
+    emailAziendale: "Giuseppe.locatelli@azienda.com",
     contratto: "indeterminato",
     teamSize: 5,
     budgetGestito: 500000,
